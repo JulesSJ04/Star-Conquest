@@ -13,4 +13,15 @@ typedef struct Dimension{
 
 enum Type {OVNI, SHUTTLE, ROCKET};
 
+enum Planet_type 
+{
+    EARTH = 0,
+    CARBON = 1,
+    MESOPLANET = 2,
+    ICE_GIANT = 3,
+    GAS_GIANT = 4,
+    HELIUM = 5,
+    DEFAULT 
+};
+
 #endif
