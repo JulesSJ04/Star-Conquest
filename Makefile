@@ -6,7 +6,7 @@ CXXFLAGS = -Wall
 CXXFLAGS = -I$(BIN_DIR)
 
 # Executable name
-EXECUTABLE = Space-Conquest
+EXECUTABLE = Space-Conquest.exe
 
 # Directory
 SRC_DIR = src
