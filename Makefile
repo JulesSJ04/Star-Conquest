@@ -2,27 +2,31 @@
 CXX = g++
 
 # Compiler flags
-CXXFLAGS = -std=c++11 -Wall
-
-# Source files
-SRC = main.cpp spacecraft.cpp
-
-# Header files
-HEADERS = main.h spacecraft.h
-
-# Object files
-OBJ = $(SRC:.cpp=.o)
+CXXFLAGS = -Wall
+CXXFLAGS = -I$(BIN_DIR)
 
 # Executable name
-EXECUTABLE = spacecraft
+EXECUTABLE = Space-Conquest
 
-all: $(EXECUTABLE)
+# Directory
+SRC_DIR = src
+BIN_DIR = bin
+BUILD_DIR = build
 
-$(EXECUTABLE): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $@ $^
+SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp)
+HEADER_FILES = $(wildcard $(BIN_DIR)/*.h)
 
-%.o: %.cpp $(HEADERS)
-	$(CXX) $(CXXFLAGS) -c -o $@ $<
+TARGET = $(BUILD_DIR)/$(EXECUTABLE)
+
+$(TARGET): $(SRC_FILES) $(HEADER_FILES)
+	$(CXX) $(CXXFLAGS) $(SRC_FILES) -o $(TARGET)
+
+all: $(TARGET)
+
+run: $(TARGET)
+	./$(TARGET)
 
 clean:
-	rm -f $(OBJ) $(EXECUTABLE)
+	rm -f $(BUILD_DIR)/$(EXECUTABLE)
+
+.PHONY: all run clean
