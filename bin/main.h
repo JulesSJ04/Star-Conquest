@@ -6,6 +6,9 @@
 #include <cstdlib>
 #include <ctime>
 #include <map>
+#include <fstream>
+#include <sstream>
+#include <cstring>
 
 //Functions prototypes
 #include "functions.h"

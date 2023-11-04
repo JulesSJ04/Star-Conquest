@@ -17,7 +17,7 @@ enum Planet_type
 {
     EARTH = 0,
     CARBON = 1,
-    MESOPLANET = 2,
+    TELLURIQUE = 2,
     ICE_GIANT = 3,
     GAS_GIANT = 4,
     HELIUM = 5,

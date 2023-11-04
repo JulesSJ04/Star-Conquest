@@ -5,6 +5,7 @@ Entrainement au C++ => deux niveaux de classe : Spacecraft => Shuttle / Rocket
 #include "main.h"
 #include "spacecraft.h"
 #include "rocket.h"
+#include "universe.h"
 
 int main()
 {
@@ -25,14 +26,18 @@ int main()
     my_ship.getDistanceTowardGoal();
     
     // Overloading operator
+    /*
     Rocket my_second_ship = my_ship;
     my_second_ship.setName("BlackJet");
-    my_second_ship.displayRocket();
+    my_second_ship.displayRocket();*/
     
     /* Map de coordonnées de planète */
+    /*
     std::map<std::string, sp_coord> planets;
     planets = createPlanets(planets);
     displayPlanets(planets);
+    */
+   Universe universe = Universe("Galaxia");
     
     /* Abstract class
     my_ship.display();

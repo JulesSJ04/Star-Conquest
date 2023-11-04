@@ -1,18 +1,19 @@
 #include "planet.h"
 
-int Planet::m_id = 0;
+int Planet::s_id = 0;
 
 Planet::Planet()
     :m_name("Planet"), m_coordinates({0, 0, 0}), m_planet_type(DEFAULT)
 {
-    m_id ++;
+    s_id ++;
 }
 
 
-Planet::Planet(std::string n, sp_coord c, Planet_type t)
-    :m_name(n), m_coordinates(c), m_planet_type(t)
+Planet::Planet(std::string n, sp_coord c, int t)
+    :m_name(n), m_coordinates(c)
 {
-    m_id ++;
+    s_id ++;
+    setPlanetType(t);
 }
 
 
@@ -27,7 +28,7 @@ std::string Planet::getPlanetType() const
         return "CARBON";
         break;
     case 2 :
-        return "MESOPLANET";
+        return "TELLURIQUE";
         break;
     case 3 :
         return "ICE GIANT";

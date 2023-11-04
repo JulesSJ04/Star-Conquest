@@ -1,4 +1,7 @@
 #include "functions.h"
+#include <iostream>
+#include <fstream>
+#include <sstream>
 
 sp_coord generateRandomCoordinates() {
     std::random_device rd;
@@ -39,4 +42,21 @@ void displayPlanets(const std::map<std::string, sp_coord> &planets)
         const sp_coord& planetCoordinates = it->second;
         std::cout << "Planet named " << planetName << " at coordinates " << formatCoordinates(planetCoordinates) << std::endl;
     }
+}
+
+int countLines(std::string fileName)
+{
+    std::ifstream inputFile;
+    inputFile.open(fileName);
+    int numberOfLines = 0;
+    if (!inputFile.is_open()) {
+        std::cout << "Unable to open file." << std::endl;
+        return 1;
+    }
+    std::string line;
+    while (std::getline(inputFile, line)) {
+        numberOfLines++;
+    }
+    inputFile.close();
+    return numberOfLines;
 }

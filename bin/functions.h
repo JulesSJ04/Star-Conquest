@@ -13,5 +13,6 @@ sp_coord generateRandomCoordinates();
 std::map<std::string, sp_coord> createPlanets(std::map<std::string, sp_coord> planets);
 std::string formatCoordinates(const sp_coord &coord);
 void displayPlanets(const std::map<std::string, sp_coord> &planets);
+int countLines(std::string fileName);
 
 #endif
